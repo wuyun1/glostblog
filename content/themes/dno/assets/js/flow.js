@@ -122,15 +122,15 @@
 			if ($(this)[0].nodeName.toLowerCase() == 'img' || $(this).find(setting.img_selector).length > 0) { //本身是图片或含有图片
 				var image = new Image;
 				var src = $(this)[0].nodeName.toLowerCase() == 'img' ? $(this).attr('src') : $(this).find(setting.img_selector).attr('src');
-				if (src == '') {
-					src = '/assets/images/commpt.png';
-					if ($(this)[0].nodeName.toLowerCase() == 'img') {
-						$(this).attr('src', src);
-					} else {
-						$(this).find(setting.img_selector).attr('src', src);
-					}
+				// if (src == '') {
+				// 	src = '/assets/images/commpt.png';
+				// 	if ($(this)[0].nodeName.toLowerCase() == 'img') {
+				// 		$(this).attr('src', src);
+				// 	} else {
+				// 		$(this).find(setting.img_selector).attr('src', src);
+				// 	}
 
-				}
+				// }
 				image.onload = function() { //图片加载后才能自动计算出尺寸
 					image.onreadystatechange = null;
 					if (setting.insert_type == 1) {
@@ -143,6 +143,7 @@
 				}
 				image.onreadystatechange = function() { //处理IE等浏览器的缓存问题：图片缓存后不会再触发onload事件
 					if (image.readyState == "complete") {
+
 						image.onload = null;
 						if (setting.insert_type == 1) {
 							insert($(elements).eq(i), setting.fadein && fadein); //插入元素
@@ -154,6 +155,23 @@
 					}
 				}
 				image.src = src;
+				setTimeout(function() {
+					if (image != null) {
+						// if ($(this)[0].nodeName.toLowerCase() == 'img') {
+						// 	$(this).attr('src', '');
+						// } else {
+						// 	$(this).find(setting.img_selector).attr('src', '');
+						// }
+						image.onload = null;
+						if (setting.insert_type == 1) {
+							insert($(elements).eq(i), setting.fadein && fadein); //插入元素
+						} else if (setting.insert_type == 2) {
+							insert2($(elements).eq(i), i, setting.fadein && fadein); //插入元素	 
+						}
+						callback($(elements).eq(i));
+						image = null;
+					}
+				}, 3000);
 			} else { //不用考虑图片加载
 				if (setting.insert_type == 1) {
 					insert($(elements).eq(i), setting.fadein && fadein); //插入元素
