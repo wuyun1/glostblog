@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Meta }}
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="{{meta_description}}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+
+    <link rel="icon" type="image/png" href="{{asset "images/favicon.png"}}" />
+    <link href="{{asset "images/favicon.png"}}" rel="shortcut icon" type="image/png">
+    <link href="{{asset "images/favicon.png"}}" rel="apple-touch-icon">
+
+    {{! Styles and Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/vno.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/tomorrow.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/introduce.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/icon.css"}}">
+        {{! The main config file }}
+    <script type="text/javascript">
+        
+        var dno_config={
+    mini_navbar:{
+        color:'red',
+        btns:[
+            {
+            icon :'tags',
+            url:'/alltags',
+            tip_str:'所有标签'
+        },{
+            icon :'heart',
+            url:'/moods',
+            tip_str:'所有标签'
+        },{
+            icon :'star',
+            url:'/lovefontend',
+            tip_str:'所有标签'
+        },{
+            icon :'tags',
+            url:'/thumbs-up',
+            tip_str:'所有标签'
+        }
+        ]           
+    },
+    side_panel:{
+        logo_url:'',
+        main_title:'大明小子',
+        sub_title:'梦存于心，功成于行',
+        description:'',
+        txt_btns:[
+           
+            {
+                text:'订阅',
+                url:'/rss'
+            }, {
+                text:'关于',
+                url:'http://wuyun1.github.io'
+            }
+        ],
+
+        img_btns:[
+            {    
+                icon:'twitter',
+                title:'twitter',
+                url:'https://github.com/wuyun1'
+            }, {
+                icon:'github',
+                title:'项目',
+                url:'https://github.com/wuyun1/ghostblog'
+            }, {    
+                icon:'rss',
+                title:'订阅',
+                url:'/rss'
+            }, {    
+                icon:'envelope',
+                title:'联系我邮箱',
+                url:'mailto:842269153@qq.com'
+            }
+        ]
+    }
+    
+};
+
+        
+    </script>
+    
+    {{! Ghost Head }}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    {{> side-panel}}
+    
+    <div class="content-wrapper">
+       <div class="content-wrapper__inner" data-info="post-detail" style="display: none;"></div>
+        <div class="content-wrapper__inner indexholder" data-info="index_pots">
+            {{{body}}}
+
+            <!-- {{> footer}} -->
+        </div>
+        
+
+    {{! Ghost Footer }}
+    {{ghost_foot}}
+
+    <!-- Compatibility for Ghost 0.7.0: http://dev.ghost.org/no-more-jquery/ -->
+
+    <script type="text/javascript" src="{{asset "js/jquery.js"}}"></script>
+    {{! The main JavaScript file }}
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    {{! Highlight.js }}
+    <script type="text/javascript" src="{{asset "js/highlight.pack.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.infinitescroll.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.parallax.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/introduce.lib.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.infinitescroll.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/introduce.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/flow.js"}}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

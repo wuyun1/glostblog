@@ -1,0 +1,14 @@
+image: daocloud/ci-node:0.12
+
+services:
+  - mysql
+
+env:
+  - MYSQL_USERNAME="root"
+  - MYSQL_PASSWORD="wu950429"
+  - MYSQL_INSTANCE_NAME="ghost"
+
+script:
+  - ls -lah
+  - env
+  
