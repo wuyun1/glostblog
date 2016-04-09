@@ -88,7 +88,7 @@ config = {
 		// The url to use when providing links to the site, E.g. in RSS and email.
 		// Change this to your Ghost blog's published URL.
 		// url: 'http://localhost:2368',
-		url: process.env.GHOST_URL || 'http://127.0.0.1:2368/',
+		url: process.env.GHOST_URL || 'http://192.168.253.1:2368/',
 
 		// url: 'asdfasfd',
 		// Example mail config
