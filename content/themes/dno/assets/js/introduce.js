@@ -4,7 +4,7 @@
 
   // Main
   if (!IsPC()) {
-    $('.panel-aside__main').hide();
+    // $('.panel-aside__main').hide();
     //return;
   }
   dno_config_init();
@@ -141,7 +141,7 @@
     canvas.width = _w;
     canvas.height = _h;
     if (!IsPC()) {
-      $('.panel-aside__main').hide();
+      // $('.panel-aside__main').hide();
     }
   }
   var ef_type = 'same'; // dis_same
@@ -388,7 +388,7 @@
   function openAside() {
     $('.panel-aside__flag').attr('isopen', 'true').animate({
       'left': '0px',
-      'top': '0px',
+      'top': IsPC() ? '0px' : '0px',
       'border-radius': '0px'
     }, 'slow', 'swing'); //.removeClass('rotateInUpRight').addClass('animated rotateInDownRight');
     $("#nav-toggle").addClass('active');
@@ -398,7 +398,7 @@
   function closeAside() {
     $('.panel-aside__flag').attr('isopen', 'false').animate({
       'left': '20px',
-      'top': '20px',
+      'top': IsPC() ? '20px' : '20px',
       'border-radius': '10px'
     }, 'slow', 'swing'); //.removeClass('rotateInDownRight').addClass('animated rotateInUpRight');
     $("#nav-toggle").removeClass('active');

@@ -116,8 +116,13 @@
 
 @media screen and (max-width: 960px){
 .panel-aside__main{
-display: none;
+/*display: none;*/
+  top:30px;
 }
+/*.panel-aside__main .panel-aside__content{
+  top:30px;
+}*/
+
 .content-wrapper{
   width: 100%;
 }
