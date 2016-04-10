@@ -22,8 +22,9 @@ $(document).ready(function() {
     $('.panel-cover').addClass('panel-cover--collapsed');
     $('.main-post-list').removeClass('hidden');
   }
-
-  if (window.location.pathname.substring(0, 5) == "/tag/") {
+  var cur_page = window.location.pathname.match(/\/([\W\w\d]+?)\//);
+  cur_page = cur_page ? cur_page[1] : null;
+  if (['tag', 'about', 'author'].indexOf(cur_page) != -1) {
     $('.panel-cover').addClass('panel-cover--collapsed');
   }
 

@@ -2,15 +2,15 @@
 // Usage: `{{tag_cloud limit="5"}}`
 // Defaults to limit="5"
 
-var _               = require('lodash'),
-    template        = require('./template'),
-    config          = require('../config'),
-    api             = require('../api'),
+var _ = require('lodash'),
+    template = require('./template'),
+    config = require('../config'),
+    api = require('../api'),
     tag_cloud;
 
-tag_cloud = function (options) {
+tag_cloud = function(options) {
     var tagCloudOptions = (options || {}).hash || {};
-    var limit = (_.has(tagCloudOptions, 'limit') && !/all/i.test(tagCloudOptions.limit))? parseInt(tagCloudOptions.limit, 10) : 'all';
+    var limit = (_.has(tagCloudOptions, 'limit') && !/all/i.test(tagCloudOptions.limit)) ? parseInt(tagCloudOptions.limit, 10) : 'all';
 
     tagCloudOptions = _.pick(tagCloudOptions, ['limit']);
     tagCloudOptions = {
@@ -19,18 +19,22 @@ tag_cloud = function (options) {
         context: 'internal'
     };
 
-    return api.tags.browse(tagCloudOptions).then(function(tags){
+    return api.tags.browse(tagCloudOptions).then(function(tags) {
         var sortedTags = _.sortBy(tags.tags, 'post_count').reverse();
 
-        if(limit !== 'all') {
+        if (limit !== 'all') {
             sortedTags = sortedTags.slice(0, limit);
         }
 
-        sortedTags.forEach(function(){
-            this.url = config.urlFor('tag', {tag: this}, false);
-        });
+        sortedTags.forEach(function() {
+            this.url = config.urlFor('tag', {
+                tag: this
+            }, false);
 
-        return template.execute('tag_cloud',  {tags:sortedTags});
+        });
+        return template.execute('tag_cloud', {
+            tags: sortedTags
+        });
     });
 };
 

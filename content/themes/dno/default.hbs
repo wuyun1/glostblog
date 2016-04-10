@@ -40,38 +40,14 @@
         
         var dno_config={
     mini_navbar:{
-        color:'red',
-        btns:[
-            {
-            icon :'tags',
-            url:'/alltags',
-            tip_str:'所有标签'
-        },{
-            icon :'heart',
-            url:'/moods',
-            tip_str:'嗮心情'
-        },{
-            icon :'star',
-            url:'/lovefontend',
-            tip_str:'star'
-        }
-        ]           
+        color:'red'
     },
     side_panel:{
         logo_url:'',
         main_title:'Jonney',
         sub_title:'有志者，事竟成。',
         description:'',
-        txt_btns:[
-           
-            {
-                text:'订阅',
-                url:'/rss'
-            }, {
-                text:'关于',
-                url:'http://wuyun1.github.io'
-            }
-        ],
+        
 
         img_btns:[
             {    
@@ -136,6 +112,22 @@
     <script type="text/javascript" src="{{asset "js/jquery.infinitescroll.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/introduce.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/flow.js"}}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initHighlightingOnLoad();
+        $(function(){
+    $('pre code').each(function(){
+        var lines = $(this).text().split('\n').length - 1;
+        var $numbering = $('<ul/>').addClass('pre-numbering');
+        $(this)
+            .addClass('has-numbering')
+            .parent()
+            .append($numbering);
+        for(i=1;i<=lines;i++){
+            $numbering.append($('<li/>').text(i));
+        }
+
+        $('.pre-numbering li').css("height",$(this).height()/lines);
+    });
+});
+    </script>
 </body>
 </html>

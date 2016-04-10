@@ -8,12 +8,7 @@
           <div id="nav-toggle"  class="panel-aside__flag"><span></span>
          </div>
          <div class="panel-aside__content">
-           <ul>
-             <li><a href="/alltags"><i class="fa fa-tags fa-2x"></i></a><span>所有标签</span></li>
-             <li><a href="/moods"><i class="fa fa-heart fa-2x"></i></a><span>晒心情</span></li>
-             <li><a href="/lovefontend"><i class="fa fa-star fa-2x"></i></a><span>大前端</span></li>
-             <li><a href="/thumbs-up"><i class="fa fa-thumbs-up fa-2x"></i></a><span>棒棒滴</span></li>
-           </ul>
+         	{{tag_cloud limit="all"}}
          </div>
      </div>
     
@@ -43,12 +38,7 @@
         <div class="navigation-wrapper">
           <div>
           <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button" data-info="goto-index">首页</a></li>
-              <li class="navigation__item"><a href="https://github.com/pjmnb007" target="_blank" title="我的项目">项目</a></li>
-              <li class="navigation__item"><a href="http://careytoboo.github.io/careytoboo" target="_blank" title="了解更多关于我">关于</a></li>
-              <li class="navigation__item"><a href="/rss" title="邮件订阅本站" target="_blank">订阅</a></li>
-            </ul>
+            {{navigation}}
           </nav>
           </div>
           <div>

@@ -1,0 +1,13 @@
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button" data-info="goto-index">首页</a></li>
+              
+              {{#foreach navigation}}
+                <li class="navigation__item nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+                    <a href="{{url absolute="true"}}"  title="{{label}}" class="blog-button" >{{label}}</a>
+                </li>
+             {{/foreach}}
+              <li class="navigation__item">
+              <a class="subscribe-button icon-feed" target="_blank" href="/rss/">订阅</a>
+              </li>
+
+            </ul>

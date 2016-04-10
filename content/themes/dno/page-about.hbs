@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#post}}
+	<style>
+		section{
+			padding:20px;
+		}
+
+	</style>
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <h1 align='center' class="post-title">{{{title}}}</h1>
+    </header>
+     
+    <section class="{{post_class}}">
+
+      {{content}}
+    </section>
+
+  </article>
+
+{{/post}}
