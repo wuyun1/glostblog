@@ -146,7 +146,7 @@ html{
 
  @charset "utf-8";
 *{ margin:0; padding:0;}
-ul,li{ list-style:none;}
+/*ul,li{ list-style:none;}*/
 a{ color:#666; text-decoration:none;}
 a:hover{ text-decoration:none; color:#000;}
 img{border:0 none;}
