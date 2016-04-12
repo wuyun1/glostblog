@@ -69,15 +69,7 @@ config = {
 
 		// or
 		// 参考文档： http://www.ghostchina.com/aliyun-oss-for-ghost/
-		storage: {
-			provider: 'qiniu',
-			bucketname: process.env.OSS_BUCKET || 'myblog',
-			ACCESS_KEY: process.env.OSS_ACCESS_KEY_ID || 'bcOHf7glzbDVusXdmgz7wNC_fhRGygaKhDAG_zoR',
-			SECRET_KEY: process.env.OSS_ACCESS_KEY_SECRET || 'fPW3oYbZAf4MfRPgiA1twIw_2jEcxTyzTf3TAtEs',
-			root: process.env.OSS_ROOT || '/image/',
-			endpoint: process.env.OSS_ENDPOINT,
-			prefix: process.env.OSS_PREFIX || 'http://7xsjnn.com2.z0.glb.qiniucdn.com'
-		},
+	
 		paths: {
 			contentPath: process.env.GHOST_CONTENT
 		}
