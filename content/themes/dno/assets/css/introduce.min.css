@@ -152,7 +152,7 @@ a:hover{ text-decoration:none; color:#000;}
 img{border:0 none;}
 
 
-#waterfall{ text-align:center; width:100%; margin:-1rem  auto 0px;}
+#waterfall{ text-align:center; width:100%; margin:-1rem  auto 0px;overflow-y: scroll;}
 #start-fash{background-image: url("http://7xqkjn.com1.z0.glb.clouddn.com/introduce_bg.jpg");
 background-repeat: no-repeat;background-size: cover;background-position: center center;}
 #waterfall .cell{
